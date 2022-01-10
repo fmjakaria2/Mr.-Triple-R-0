@@ -808,137 +808,152 @@ html {
   box-sizing: inherit;
 }
 
+
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-size: 1rem;
-  line-height: 1.25;
-  background-color: #18222d;
+  background-color: #eee;
 }
-
-.grid {
-  width: 100%;
-  max-width: 60rem;
-  margin-left: auto;
-  margin-right: auto;
-
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  flex-direction: row;
-  flex-wrap: wrap;
+.hello {
+  opacity: 1 !important;
 }
-
-.grid-block {
-  width: 50%;
-  min-height: 11.25rem;
-  padding: 1rem;
-}
-
-.image-grid {
-  -webkit-transform: rotateX(45deg) rotateZ(45deg);
-  transform: rotateX(45deg) rotateZ(45deg);
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-}
-
-.image-grid .tile-link:hover .tile-img {
-  top: -1rem;
-  left: -1rem;
-}
-
-.image-grid .tile-img {
-  position: relative;
-  top: 0;
+.full {
+  position: fixed;
   left: 0;
-  -webkit-transition-property: opacity, top, left, box-shadow;
-  transition-property: opacity, top, left, box-shadow;
-}
-
-.tile-link {
-  display: block;
-}
-
-.tile-link:hover .tile-img {
-  opacity: 1;
-}
-
-.tile-link:hover .tile-img-link {
-  display: block;
-}
-
-.tile-link:hover .tile-img-link:hover .tile-img {
-  opacity: 0.5;
-}
-
-.tile-img {
-  display: block;
+  top: 0;
   width: 100%;
-  height: auto;
-  opacity: 1;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.125s;
-  transition-duration: 0.125s;
-  -webkit-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
+  height: 100%;
+  z-index: 1;
 }
-.tile-link:hover .tile-img1 {
-  box-shadow: 5px 5px rgba(244, 170, 200, 0.4),
-    10px 10px rgba(244, 170, 200, 0.3), 15px 15px rgba(244, 170, 200, 0.2),
-    20px 20px rgba(244, 170, 200, 0.1), 25px 25px rgba(244, 170, 200, 0.05);
+.full .content {
+  background-color: rgba(0,0,0,0.75) !important;
+  height: 100%;
+  width: 100%;
+  display: grid;
 }
-
-.tile-link:hover .tile-img2 {
-  box-shadow: 5px 5px rgba(45, 186, 233, 0.4), 10px 10px rgba(45, 186, 233, 0.3),
-    15px 15px rgba(45, 186, 233, 0.2), 20px 20px rgba(45, 186, 233, 0.1),
-    25px 25px rgba(45, 186, 233, 0.05);
+.full .content img {
+  left: 50%;
+  transform: translate3d(0, 0, 0);
+  animation: zoomin 1s ease;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
 }
-
-.tile-link:hover .tile-img3 {
-  box-shadow: 5px 5px rgba(214, 221, 244, 0.4),
-    10px 10px rgba(214, 221, 244, 0.3), 15px 15px rgba(214, 221, 244, 0.2),
-    20px 20px rgba(214, 221, 244, 0.1), 25px 25px rgba(214, 221, 244, 0.05);
+.byebye {
+  opacity: 0;
 }
-
-.tile-link:hover .tile-img4 {
-  box-shadow: 5px 5px rgba(82, 119, 192, 0.4), 10px 10px rgba(82, 119, 192, 0.3),
-    15px 15px rgba(82, 119, 192, 0.2), 20px 20px rgba(82, 119, 192, 0.1),
-    25px 25px rgba(82, 119, 192, 0.05);
+.byebye:hover {
+  transform: scale(0.2) !important;
 }
-
-.tile-link:hover .tile-img5 {
-  box-shadow: 5px 5px rgba(138, 218, 245, 0.4),
-    10px 10px rgba(138, 218, 245, 0.3), 15px 15px rgba(138, 218, 245, 0.2),
-    20px 20px rgba(138, 218, 245, 0.1), 25px 25px rgba(138, 218, 245, 0.05);
+.gallery {
+  display: grid;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 8px;
 }
-
-.tile-link:hover .tile-img6 {
-  box-shadow: 5px 5px rgba(203, 215, 193, 0.4),
-    10px 10px rgba(203, 215, 193, 0.3), 15px 15px rgba(203, 215, 193, 0.2),
-    20px 20px rgba(203, 215, 193, 0.1), 25px 25px rgba(203, 215, 193, 0.05);
+.gallery img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #333;
+  transition: all 1.5s ease;
 }
-
-.tile-link:hover .tile-img7 {
-  box-shadow: 5px 5px rgba(91, 209, 250, 0.4), 10px 10px rgba(91, 209, 250, 0.3),
-    15px 15px rgba(91, 209, 250, 0.2), 20px 20px rgba(91, 209, 250, 0.1),
-    25px 25px rgba(91, 209, 250, 0.05);
+.gallery img:hover {
+  box-shadow: 0 0 32px #333;
 }
-
-.tile-link:hover .tile-img8 {
-  box-shadow: 5px 5px rgba(145, 156, 196, 0.4),
-    10px 10px rgba(145, 156, 196, 0.3), 15px 15px rgba(145, 156, 196, 0.2),
-    20px 20px rgba(145, 156, 196, 0.1), 25px 25px rgba(145, 156, 196, 0.05);
+.gallery .content {
+  padding: 4px;
 }
-
-.tile-link:hover .tile-img9 {
-  box-shadow: 5px 5px rgba(188, 97, 129, 0.4), 10px 10px rgba(188, 97, 129, 0.3),
-    15px 15px rgba(188, 97, 129, 0.2), 20px 20px rgba(188, 97, 129, 0.1),
-    25px 25px rgba(188, 97, 129, 0.05);
+.gallery .gallery-item {
+  transition: grid-row-start 300ms linear;
+  transition: transform 300ms ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
 }
-
-.tile-link:hover .tile-img10 {
-  box-shadow: 5px 5px rgba(4, 140, 231, 0.4), 10px 10px rgba(4, 140, 231, 0.3),
-    15px 15px rgba(4, 140, 231, 0.2), 20px 20px rgba(4, 140, 231, 0.1),
-    25px 25px rgba(4, 140, 231, 0.05);
+.gallery .gallery-item:hover {
+  transform: scale(1.025);
+}
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  }
+}
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+}
+@-moz-keyframes zoomin {
+  0% {
+    max-width: 50%;
+    transform: rotate(-30deg);
+    filter: blur(4px);
+  }
+  30% {
+    filter: blur(4px);
+    transform: rotate(-80deg);
+  }
+  70% {
+    max-width: 50%;
+    transform: rotate(45deg);
+  }
+  100% {
+    max-width: 100%;
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes zoomin {
+  0% {
+    max-width: 50%;
+    transform: rotate(-30deg);
+    filter: blur(4px);
+  }
+  30% {
+    filter: blur(4px);
+    transform: rotate(-80deg);
+  }
+  70% {
+    max-width: 50%;
+    transform: rotate(45deg);
+  }
+  100% {
+    max-width: 100%;
+    transform: rotate(0deg);
+  }
+}
+@-o-keyframes zoomin {
+  0% {
+    max-width: 50%;
+    transform: rotate(-30deg);
+    filter: blur(4px);
+  }
+  30% {
+    filter: blur(4px);
+    transform: rotate(-80deg);
+  }
+  70% {
+    max-width: 50%;
+    transform: rotate(45deg);
+  }
+  100% {
+    max-width: 100%;
+    transform: rotate(0deg);
+  }
+}
+@keyframes zoomin {
+  0% {
+    max-width: 50%;
+    transform: rotate(-30deg);
+    filter: blur(4px);
+  }
+  30% {
+    filter: blur(4px);
+    transform: rotate(-80deg);
+  }
+  70% {
+    max-width: 50%;
+    transform: rotate(45deg);
+  }
+  100% {
+    max-width: 100%;
+    transform: rotate(0deg);
+  }
 }
